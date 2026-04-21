@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web programozás-1 – Házi feladat</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container">
+      <nav class="menu">
+        <a href="index.html">Főoldal</a>
+        <a href="javascript.html">JavaScript CRUD</a>
+        <a href="react.html">React CRUD</a>
+        <a href="spa.html">SPA</a>
+        <a href="fetchapi.html">Fetch API</a>
+        <a href="axios.html">Axios</a>
+        <a href="oojs.html">OOJS</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <h1 class="h1">Web programozás-1 Előadás Házi feladat</h1>
+        <p class="muted">
+          Ez az alkalmazás egy pizzarendelési adatbázis (kategória, pizza, rendelés) adataira épül.
+          A menüpontokban különböző technológiákkal (JavaScript, React, Fetch API, Axios, OOJS) készített CRUD és demo alkalmazások találhatók.
+        </p>
+        <div class="grid">
+          <div class="badge">Adatforrás: kategoria.txt, pizza.txt, rendeles.txt</div>
+          <div class="badge">CRUD: Create • Read • Update • Delete</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kpi" style="margin-top:18px">
+      <div class="card"><div class="muted">Kategóriák</div><div class="num" id="kpiCats">–</div></div>
+      <div class="card"><div class="muted">Pizzák</div><div class="num" id="kpiPizzas">–</div></div>
+      <div class="card"><div class="muted">Vegetáriánus pizzák</div><div class="num" id="kpiVeg">–</div></div>
+    </section>
+
+    <div class="footer">
+      Készítők: <strong>Oskola Milán – GXRHGB</strong>, <strong>Papp Zsigmond – YHXBSP</strong>
+    </div>
+  </main>
+
+  <script src="js/data/categories.js"></script>
+  <script src="js/data/pizzas.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    document.getElementById('kpiCats').textContent = window.CATEGORIES.length;
+    document.getElementById('kpiPizzas').textContent = window.PIZZAS.length;
+    document.getElementById('kpiVeg').textContent = window.PIZZAS.filter(p=>p.vegetarianus===1).length;
+  </script>
+</body>
+</html>
