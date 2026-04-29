@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch API – Rendelések</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+    <div class="container">
+      <nav class="menu">
+        <a href="index.html">Főoldal</a>
+        <a href="javascript.html">JavaScript CRUD</a>
+        <a href="react.html">React CRUD</a>
+        <a href="spa.html">SPA</a>
+        <a href="fetchapi.html" class="active">Fetch API</a>
+        <a href="axios.html">Axios</a>
+        <a href="oojs.html">OOJS</a>
+      </nav>
+    </div>
+  </header>
+
+<div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="card">
+            <h1 class="h1">Fetch API – Rendelések</h1>
+            <p class="muted">CRUD műveletek JavaScript Fetch API használatával</p>
+        </div>
+    </section>
+
+    <!-- ÜZENET -->
+    <p id="message" class="muted"></p>
+
+    <!-- ÚJ: KERESÉS KÁRTYA -->
+    <div class="card">
+        <h3>Keresés időpont alapján</h3>
+
+        <div class="form">
+            <div class="span2">
+                <label for="felvetel_tol">Felvétel ettől</label>
+                <input type="datetime-local" id="felvetel_tol">
+            </div>
+
+            <div class="span2">
+                <label for="kiszallitas_ig">Kiszállítás eddig</label>
+                <input type="datetime-local" id="kiszallitas_ig">
+            </div>
+
+            <div class="span4">
+                <button class="btn primary" onclick="keres()">Keresés</button>
+                <button class="btn" onclick="betolt()">Alap lista</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ŰRLAP (meglévő, változatlan) -->
+    <div class="card">
+        <h3 id="addedit">Új rendelés</h3>
+
+        <form id="rendelesForm" class="form">
+            <input type="hidden" id="id">
+
+            <div class="span2">
+                <label for="pizzanev">Pizza neve</label>
+                <input type="text" id="pizzanev" required>
+            </div>
+
+            <div class="span2">
+                <label for="darab">Darab</label>
+                <input type="number" id="darab" required>
+            </div>
+
+            <div class="span2">
+                <label for="felvetel">Felvétel ideje</label>
+                <input type="datetime-local" id="felvetel" required>
+            </div>
+
+            <div class="span2">
+                <label for="kiszallitas">Kiszállítás ideje</label>
+                <input type="datetime-local" id="kiszallitas" required>
+            </div>
+
+            <div class="span4">
+                <button class="btn primary" type="submit">Mentés</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- TÁBLA -->
+    <div class="card">
+        <h3>Rendelések listája (max. 20 rekord)</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Pizza</th>
+                    <th>Darab</th>
+                    <th>Felvétel</th>
+                    <th>Kiszállítás</th>
+                    <th>Művelet</th>
+                </tr>
+            </thead>
+            <tbody id="rendelesTable">
+                <!-- JS tölti -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <strong>Készítette: Oskola Milán - GXRHGB Papp Zsigmond - YHXBSP</strong>
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
