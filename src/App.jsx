@@ -74,7 +74,7 @@ function App() {
         <a href="react.html">React CRUD</a>
         <a href="spa.html">SPA</a>
         <a href="fetchapi.html">Fetch API</a>
-        <a href="axios.html">Axios</a>
+        <a href="axios.html" className="active">Axios</a>
         <a href="oojs.html">OOJS</a>
       </nav>
     </div>
